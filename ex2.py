@@ -155,4 +155,5 @@ k = i * 60
 l = j + k
 m = c - l
 n = int("%.0d" % m)
+
 print("Tempo necessário para encher o reservatório: %d:%d:%d" % (f,i,n))
