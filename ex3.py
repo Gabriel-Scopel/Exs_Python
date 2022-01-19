@@ -2,6 +2,7 @@
 #Neste exercício, você criará um programa que lê uma letra do alfabeto. Se o usuário digitar a, e, i, o ou u, seu programa deverá exibir uma mensagem indicando que a letra inserida é uma vogal. Se o usuário digitar y, seu programa deve exibir uma mensagem indicando que às vezes y é uma vogal (depende da língua, no inglês, por exemplo), e às vezes y é uma consoante. Caso contrário, seu programa deve exibir uma mensagem indicando que a letra é uma consoante.
 
 letra = input("Digite a letra desejada: ")
+
 if letra == "a" or letra == "e" or letra == "i" or letra == "o" or letra == "u":
   print("Essa letra é uma vogal")
 elif letra == "y":
