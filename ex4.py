@@ -34,6 +34,7 @@ while i<=N:
     E2 = 1/i
     E1 = E1+E2
     i+=1
+
 print(E1)
 
 #Exercício 4:
