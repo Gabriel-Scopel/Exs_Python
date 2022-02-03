@@ -44,7 +44,7 @@ print(numero)
 pares = []
 impares = []
 
-for i in range(7):
+for i in range(20):
   a = int(input())
   if a%2==0:
     pares.append(a)
@@ -53,4 +53,16 @@ numeros = pares+impares
 print(pares)
 print(impares)
 print(numeros)
+
+#Exercício 4
+# Escreva uma função que recebe uma lista de números inteiros e retorne uma nova lista que contém o quadrado de cada um desses números. Você só precisa entregar o código da função.
+
+def armazena(lista):
+  nova_lista = []
+  for i in (lista):
+    a=i**2
+    nova_lista.append(a)
+  return(nova_lista)
+
+
 
