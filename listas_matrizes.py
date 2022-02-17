@@ -33,3 +33,95 @@ for i in c:
 # Uma matriz com os preços de todos os produtos em cada loja
 # O programa deverá mostrar todas as listas: lojas, produtos e preços(Utilize % 3d para imprimir a matriz). Depois, deverá mostrar todas relações(nome do produto – nome da loja - preço) em que o preço não ultrapasse R$ 50, 00.
 
+lojas = []
+produtos = []
+preco = []
+
+for i in range(3):
+  lojas.append(input('Digite o nome da loja: '))
+
+for i in range(5):
+  produtos.append(input('Digite o nome do produto: '))
+
+for indice_linha in range(3):
+  linha = []
+  for indice_coluna in range(5):
+    linha.append(
+        int(input('Digite o preco do produto {0} na loja {1}: '.format(indice_coluna, indice_linha))))
+  preco.append(linha)
+
+print('\nLojas:')
+for i in lojas:
+  print(i)
+
+print('\nProdutos:')
+for i in produtos:
+  print(i)
+
+print('\nPreços:')
+for linha in range(len(preco)):
+  for coluna in range(len(preco[linha])):
+    print('%3d' %preco[linha][coluna], end=' ')
+  print()
+
+print('\nPreços menores que R$ 50.00: ')
+for linha in range(len(preco)):
+  for coluna in range(len(preco[linha])):
+    if preco[linha][coluna] < 50:
+      print('Loja: {0}, produto {1} e preço {2}'.format(
+          lojas[linha], produtos[coluna], preco[linha][coluna]))
+  print()
+
+
+#Exercício 3
+# Crie um programa que preencha uma matriz 20x10 (20 linhas e 10 colunas) com números inteiros aleatórios (entre 0 e 10) e some cada uma das linhas, armazenando o resultado das somas em um vetor (lista). A seguir, o programa deverá multiplicar cada elemento da matriz pela soma da linha correspondente e mostrar a matriz resultante.
+
+from random import randint
+
+m=[]
+lista=[]
+soma=[]
+valor=0
+
+for i in range(20):
+  linha=[]
+  for i in range(10):
+    linha.append(randint(0, 10))
+  m.append(linha)
+
+for i in m:
+  for j in i:
+    valor+=j
+  soma.append(valor)
+
+for i in range(len(m)):
+  for j in range(len(m[i])):
+    m[i][j]=m[i][j]*soma[i]
+    print('%5d' % m[i][j], end=' ')
+  print()
+
+#Exercício 4
+#Elabore um programa que preencha uma matriz 4x2 com números inteiros recebidos do usuário e mostre essa matriz. Calcule e mostre quantos elementos dessa matriz são maiores que 10 e, em seguida, mostre uma segunda matriz com 0 (zero) no lugar dos elementos maiores que 10. Utilize %3d para imprimir todas as matrizes.
+
+m=[]
+count=0
+for i in range(4):
+  linha=[]
+  for j in range(2):
+    linha.append(int(input("Digite o elemento da linha %d coluna %d: " %(i, j))))
+  m.append(linha)
+print("Matriz antes: ")
+for i in m:
+  for j in i:
+    if j>10:
+      count+=1
+    print("%3d" %j, end=" ")
+  print()
+print("Matriz depois: ")
+for i in m:
+  for j in i:
+    if j>10:
+      j=0
+    print("%3d" %j, end=" ")
+  print()
+print("A quantidade de elementos maiores que 10 é igual a", count)
